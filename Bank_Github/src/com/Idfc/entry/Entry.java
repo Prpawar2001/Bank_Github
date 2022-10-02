@@ -3,10 +3,11 @@ package com.Idfc.entry;
 import java.util.Scanner;
 
 import com.Idfc.bank.Bank;
+import com.Idfc.exception.InvalidCredits;
 
 public class Entry {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InvalidCredits {
 		Scanner sc = new Scanner(System.in);
 		Bank bank = new Bank();
 		
@@ -65,6 +66,9 @@ public class Entry {
 					}
 				}
 			}
+		}else {
+			sc.close();
+			throw new InvalidCredits("Invalid Credits ! Provide vaid inputs !!");
 		}
 	
 		
