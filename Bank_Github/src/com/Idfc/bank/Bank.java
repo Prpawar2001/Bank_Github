@@ -6,6 +6,11 @@ public class Bank {
 //	Creating User object to access getters and setters for transactions
 	User user = new User();
 	
+//	This method return name
+	public String Cust_Name() {
+		return user.getName();
+	}
+	
 //	This method displays balance
 	public void balance() {
 		System.out.println("Your account balance is, " + user.getAccBal());
@@ -33,6 +38,14 @@ public class Bank {
 		user.setAccBal(bal);
 		System.out.println("Amount Transferred Sucessfully to " + accNo);
 		System.out.println("Your account balance is, " + user.getAccBal());
+	}
+	
+//	This method verifies User credentials
+	public boolean verify(int accNo, String pass) {
+		if((accNo==user.getAccNo() && pass.equals(user.getPasswd()))){
+			return true;
+		}
+		return false;
 	}
 
 }
